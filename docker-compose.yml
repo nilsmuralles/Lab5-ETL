@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: lab5_sql
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: lab5_sql
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+      - ./data/raw/sql:/tmp/data
+
+volumes:
+  postgres_data:
