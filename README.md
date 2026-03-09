@@ -18,7 +18,7 @@ Los datos integrados contienen información sobre:
 
 ---
 
-# Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - Python
 - Pandas
@@ -31,7 +31,7 @@ Los datos integrados contienen información sobre:
 
 ---
 
-# Requisitos
+## Requisitos
 
 Antes de ejecutar el proyecto es necesario tener instalado:
 
@@ -41,7 +41,7 @@ Antes de ejecutar el proyecto es necesario tener instalado:
 
 ---
 
-# Paso 1: Levantar la base de datos con Docker
+### Paso 1: Levantar la base de datos con Docker
 
 Desde la carpeta del proyecto ejecutar:
 
@@ -61,7 +61,7 @@ docker compose down -v
 docker compose up
 ```
 
-# Paso 2: Crear entorno virtual en WSL
+### Paso 2: Crear entorno virtual en WSL
 Desde WSL navegar a la carpeta del proyecto:
 ```bash
 cd /mnt/c/Users/isabe/OneDrive/Escritorio/Lab5-ETL
@@ -74,13 +74,13 @@ Activarlo:
 ```bash
 source venv/bin/activate
 ```
-# Paso 3: Instalar dependencias
+### Paso 3: Instalar dependencias
 Con el entorno virtual activo instalar las librerías necesarias:
 ```bash
 pip install pandas sqlalchemy psycopg2-binary
 ```
 
-# Paso 4: Ejecutar el pipeline ETL
+### Paso 4: Ejecutar el pipeline ETL
 Con el entorno virtual activo ejecutar:
 ```bash
 python etl/pipeline.py
@@ -92,7 +92,7 @@ ETL ejecutado correctamente
 ```
 ---
 
-# Verificación en la base de datos
+### Verificación en la base de datos
 
 Para verificar que los datos fueron cargados correctamente en el Data Warehouse:
 
