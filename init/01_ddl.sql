@@ -18,3 +18,10 @@ CREATE TABLE pais_poblacion (
     costo_bajo_transporte DECIMAL(10,2),
     costo_promedio_entretenimiento DECIMAL(10,2)
 );
+
+CREATE TABLE pais_dw(
+    pais VARCHAR(100),
+    continente VARCHAR(100),
+    poblacion NUMERIC,
+    tasa_envejecimiento DECIMAL
+);
