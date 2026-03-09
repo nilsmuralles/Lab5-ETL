@@ -16,18 +16,23 @@ services:
   airflow:
       build: .
       container_name: lab5_airflow
-      user: "0:0"
       ports:
         - "8080:8080"
-      volumes:
-        - ./dags:/opt/airflow/dags
-        - ./data:/opt/airflow/data
-        - airflow_db:/opt/airflow
+      env_file:
+        - .env
       environment:
         AIRFLOW__CORE__EXECUTOR: SequentialExecutor
         AIRFLOW__CORE__LOAD_EXAMPLES: "false"
         AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
-        MONGO_URI: "mongodb+srv://nilsmuralles:PASSWORD@cluster0.7r70vu6.mongodb.net/"
+        POSTGRES_HOST: postgres
+        POSTGRES_DB: lab5_sql
+        POSTGRES_USER: user
+        POSTGRES_PASSWORD: password
+        MONGO_URI: "mongodb+srv://nilsmuralles:BDCkh7sRNsRDOGH4@cluster0.7r70vu6.mongodb.net/"
+      volumes:
+        - ./dags:/opt/airflow/dags
+        - ./data:/opt/airflow/data
+        - airflow_db:/opt/airflow
       command: >
         bash -c "airflow db init ;
                  airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@lab5.com ;
