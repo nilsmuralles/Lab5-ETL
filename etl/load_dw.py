@@ -17,14 +17,24 @@ def load_dw(df):
             pais,
             continente,
             poblacion,
-            tasa_envejecimiento
+            tasa_envejecimiento,
+            precio_big_mac,
+            costo_hospedaje,
+            costo_comida,
+            costo_transporte,
+            costo_entretenimiento
         )
-        VALUES (%s,%s,%s,%s)
-        """, (
-            row["nombre_pais"],
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        """,(
+            row["pais"],
             row["continente"],
             row["poblacion"],
-            row["tasa_de_envejecimiento"]
+            row["tasa_envejecimiento"],
+            row["precio_big_mac"],
+            row["costo_hospedaje"],
+            row["costo_comida"],
+            row["costo_transporte"],
+            row["costo_entretenimiento"]
         ))
 
     conn.commit()

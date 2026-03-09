@@ -15,6 +15,18 @@ def extract_json():
         with open(file, encoding="utf-8") as f:
             data.extend(json.load(f))
 
-    df = pd.json_normalize(data)
+    df_costos = pd.json_normalize(data)
 
-    return df
+    return df_costos
+
+
+def extract_bigmac():
+
+    file = "data/raw/no-sql/paises_mundo_big_mac.json"
+
+    with open(file, encoding="utf-8") as f:
+        data = json.load(f)
+
+    df_bigmac = pd.DataFrame(data)
+
+    return df_bigmac

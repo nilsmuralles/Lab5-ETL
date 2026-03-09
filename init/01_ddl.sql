@@ -23,5 +23,10 @@ CREATE TABLE pais_dw(
     pais VARCHAR(100),
     continente VARCHAR(100),
     poblacion NUMERIC,
-    tasa_envejecimiento DECIMAL
+    tasa_envejecimiento DECIMAL,
+    precio_big_mac DECIMAL,
+    costo_hospedaje DECIMAL,
+    costo_comida DECIMAL,
+    costo_transporte DECIMAL,
+    costo_entretenimiento DECIMAL
 );
