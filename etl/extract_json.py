@@ -2,7 +2,6 @@ import pandas as pd
 import json
 
 def extract_json():
-
     files = [
         "data/raw/no-sql/costos_turisticos_africa.json",
         "data/raw/no-sql/costos_turisticos_america.json",

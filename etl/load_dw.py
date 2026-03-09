@@ -1,7 +1,6 @@
 import psycopg2
 
 def load_dw(df):
-
     conn = psycopg2.connect(
         host="localhost",
         database="lab5_sql",
@@ -11,7 +10,6 @@ def load_dw(df):
     )
 
     cursor = conn.cursor()
-
     for _, row in df.iterrows():
 
         cursor.execute("""
